@@ -1,0 +1,39 @@
+<head>
+    <title>Search</title>
+	<script src="https://kit.fontawesome.com/b19200b50e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+	<div id="header">
+		<h1 id="relectlogo">RELECT: recall your dialects!</h1>
+        <div>
+            <ul id="navbar">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('upload') }}">Share A Phrase</a></li>
+                <li><a class="active" href="{{ url_for('search') }}">Search User</a></li>
+            </ul>
+        </div>
+    </div>
+	
+	<section class="centralise">
+		<h2 id="pageheader">Search Contributions By Any Username</h2>
+		<p>Search any username to view all the recordings that they have contributed and the THANKS that they have received!</p>
+		
+		<section class="centralise" id="instructions2">
+			<h2 id="pageheader">Search here</h2>
+
+			<form action="{{url_for('search')}}" method="POST">
+				<p id="searchuser">Username: <input name="userid" type="text"></p>
+				<p><input type="submit" value="Search" id="submitbuttons"></p>
+			</form>
+		</section>
+	</section>
+	
+	<section class="footer">
+		<p>© zixuanvtzx</p>
+	</section>
+
+</body>
+
+</html>

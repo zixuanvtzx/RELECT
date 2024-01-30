@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Share</title>
+	<script src="https://kit.fontawesome.com/b19200b50e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+	<div id="header">
+		<h1 id="relectlogo">RELECT: recall your dialects!</h1>
+        <div>
+            <ul id="navbar">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a class="active" href="{{ url_for('upload') }}">Share A Phrase</a></li>
+                <li><a href="{{ url_for('search') }}">Search User</a></li>
+            </ul>
+        </div>
+    </div>
+	
+	<section class="centralise">
+		<h2 id="pageheader">Share With 3 Quick Steps</h2>
+		<p>Follow the steps below to share a dialect phrase that you know!</p>
+		
+		<div class="row">
+			<div class="instructions-col">
+				<h3>Step 1: Record Phrase</h3>
+				<p>Record with <a href="https://record.reverb.chat/" target="_blank" rel="noopener" rel="noreferrer">Reverb Record</a></p>
+			</div>
+			<div class="instructions-col">
+				<h3>Step 2: Copy Link</h3>
+				<p>Copy the audio link</p>
+			</div>
+			<div class="instructions-col">
+				<h3>Step 3: Paste & Share</h3>
+				<p>Paste the audio link below</p>
+			</div>
+		</div>
+	</section>
+	
+	<section class="centralise" id="instructions2">
+		<h2 id="pageheader">Contribute here!</h2>
+
+		<form action="{{url_for('upload')}}" method="POST">
+			<p><b>Username:</b> <input name="usernameid" type="text"></p>
+			<p>
+				<label for="dialectid"><b>Choose a dialect:</b></label>
+				<select name="dialectid" id="dialectid">
+				<option value="Hokkien">Hokkien</option>
+				<option value="Teochew">Teochew</option>
+				<option value="Cantonese">Cantonese</option>
+				<option value="Hakka">Hakka</option>
+				<option value="Hainanese">Hainanese</option>
+				<option value="Other">Other</option>
+				</select>
+			</p>
+			<p><b>Phrase:</b> <input name="phraseid" type="text"></p>
+			<p><b>Input link to audio here:</b> <input name="fileid" type="text"></p>
+			<p><input type="submit" value="Submit" id="submitbuttons"></p>
+		</form>
+		
+	</section>
+	
+	<section class="footer">
+		<p>© zixuanvtzx</p>
+	</section>
+</body>
+
+</html>

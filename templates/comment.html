@@ -1,0 +1,40 @@
+<head>
+    <title>Comment</title>
+	<script src="https://kit.fontawesome.com/b19200b50e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+
+	<div id="header">
+		<h1 id="relectlogo">RELECT: recall your dialects!</h1>
+        <div>
+            <ul id="navbar">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('upload') }}">Share A Phrase</a></li>
+                <li><a href="{{ url_for('search') }}">Search User</a></li>
+            </ul>
+        </div>
+    </div>
+	
+	<section class="centralise">
+		<h2 id="pageheader">Send a thank you note to {{username}}!</h2>
+		<p><i>One kind word can change someone's entire day :)</i></p>
+		
+		<section class="centralise">
+			<form action="{{url_for('comment', user=username)}}" method="POST" id="commentform">
+				<p><b>Message:</b> <textarea rows="4" cols="50" name="commentid" form="commentform" placeholder="Enter your message here"></textarea></p>
+				<p><b>Sender</b>: <input name="senderid" type="text" placeholder="Optional"></p>
+				<p><input type="submit" value="Send" id="submitbuttons"></p>
+			</form>
+		</section>
+	</section>
+	
+	<section class="footer">
+		<p>© zixuanvtzx</p>
+	</section>
+	
+</body>
+
+</html>

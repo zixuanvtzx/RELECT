@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RELECT</title>
+	<script src="https://kit.fontawesome.com/b19200b50e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+	<div id="header">
+		<h1 id="relectlogo">RELECT: recall your dialects!</h1>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('upload') }}">Share A Phrase</a></li>
+                <li><a href="{{ url_for('search') }}">Search User</a></li>
+            </ul>
+        </div>
+    </div>
+
+	<section class="content">
+	
+	<h2 id="pageheader">Dialects Base</h2>
+	<p><i>You can click on the name of any contributors to gift them a thank you note!</i></p>
+	
+	<table class="normal-table">
+	<tr>
+		<th>Dialect</th>
+		<th>Phrase</th>
+		<th>Voice</th>
+		<th>Contributor</th>
+	</tr>
+	{% for row in records %}
+	<tr>
+		<td>{{ row[0] }}</td>
+		<td>{{ row[1] }}</td>
+		<td><a href={{ row[2] }} target="_blank" rel="noopener" rel="noreferrer"><i class="fa-solid fa-play"></i></a></td>
+		<td><a href="{{ url_for('comment', user=row[3]) }}">{{ row[3] }}</a></td>
+	</tr>
+	{% endfor %}
+
+    </table>
+	
+	</section>
+	
+	<section class="footer">
+		<p>© zixuanvtzx</p>
+	</section>
+	
+</body>
+
+</html>
